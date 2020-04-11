@@ -2,7 +2,16 @@
 
 require '../vendor/autoload.php';
 
+// Twig
 $loader = new Twig\Loader\FilesystemLoader('./../src/view');
 $twig = new Twig\Environment($loader);
 
-echo $twig->render('hello.html.twig');
+$products = [
+    'product1',
+    'product2',
+    'product3',
+    'product4',
+    'product5'
+];
+
+echo $twig->render('index.html.twig', ['products' => $products]);
